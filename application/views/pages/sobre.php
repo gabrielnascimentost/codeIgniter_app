@@ -1,1 +1,1 @@
-<h2>Sobre da p·gina</h2>
+<h2>Sobre da p√°gina</h2>
