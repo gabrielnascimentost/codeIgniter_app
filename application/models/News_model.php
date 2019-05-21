@@ -13,6 +13,16 @@ class News_model extends CI_Model{
             $query = $this->db->get_where('news', array('uri' =>$uri));
             return $query->row_array();
         }
-       
+    }
+    
+    public function set_news() {
+        $this->load->helper('url');
+        $uri = url_title($this->input->post('title'), 'dash', true);
+        $data = array(
+                'title' => $this->input->post('title'),  
+                'uri' => $uri,
+                'text' => $this->input->post('text')
+        );
+        $this->db->insert('news', $data);
     }
 }
